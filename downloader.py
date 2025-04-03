@@ -62,7 +62,7 @@ class Downloader:
             self.logger.error(f"{error_message}: {e}")
             return None
     
-    def get_audios(self) -> List[Stream]:
+    def get_audios_only(self) -> List[Stream]:
         """
         Get all available audio streams.
         

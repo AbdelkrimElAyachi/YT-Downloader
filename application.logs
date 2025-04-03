@@ -1,1 +1,63 @@
 2025-03-29 16:12:13 - INFO - app.py - <module>():13- hello from file
+2025-04-01 18:38:42 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: test
+2025-04-01 18:38:42 - ERROR - downloader.py - __init__():44- Failed to create YouTube object: regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*
+2025-04-01 18:42:32 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: test
+2025-04-01 18:42:32 - ERROR - downloader.py - __init__():44- Failed to create YouTube object: regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*
+2025-04-01 18:43:30 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: test
+2025-04-01 18:43:30 - ERROR - downloader.py - __init__():44- Failed to create YouTube object: regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*
+2025-04-01 18:43:46 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: test
+2025-04-01 18:43:46 - ERROR - downloader.py - __init__():44- Failed to create YouTube object: regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*
+2025-04-01 19:00:44 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:17:39 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:23:29 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:23:51 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:24:50 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:25:09 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:25:25 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:25:35 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:26:38 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:27:07 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:27:22 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:27:41 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:29:18 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:29:35 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:34:13 - INFO - downloader.py - __init__():40- Creating YouTube object for URL:         """
+2025-04-01 21:34:13 - ERROR - downloader.py - __init__():44- Failed to create YouTube object: regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*
+2025-04-01 21:34:26 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:34:55 - INFO - downloader.py - download_stream():126- Downloading stream with itag 299 (1080p)
+2025-04-01 21:49:24 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=5ZgFJXsCepA
+2025-04-01 21:49:40 - INFO - downloader.py - download_stream():126- Downloading stream with itag 303 (1080p)
+2025-04-02 00:26:05 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:26:56 - INFO - downloader.py - download_stream():126- Downloading stream with itag 303 (1080p)
+2025-04-02 00:27:00 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/test.webm
+2025-04-02 00:33:10 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:35:17 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:35:37 - INFO - downloader.py - download_stream():126- Downloading stream with itag 399 (1080p)
+2025-04-02 00:35:39 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/song
+2025-04-02 00:36:23 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:36:31 - INFO - downloader.py - download_stream():126- Downloading stream with itag 399 (1080p)
+2025-04-02 00:36:31 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/song
+2025-04-02 00:36:46 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:36:53 - INFO - downloader.py - download_stream():126- Downloading stream with itag 399 (1080p)
+2025-04-02 00:36:56 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/song
+2025-04-02 00:38:59 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:39:17 - INFO - downloader.py - download_stream():126- Downloading stream with itag 303 (1080p)
+2025-04-02 00:39:21 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/song
+2025-04-02 00:39:37 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:39:52 - INFO - downloader.py - download_stream():126- Downloading stream with itag 18 (360p)
+2025-04-02 00:39:53 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/song
+2025-04-02 00:41:52 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:42:03 - INFO - downloader.py - download_stream():126- Downloading stream with itag 18 (360p)
+2025-04-02 00:42:04 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/song
+2025-04-02 00:42:20 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:42:28 - INFO - downloader.py - download_stream():126- Downloading stream with itag 18 (360p)
+2025-04-02 00:42:29 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/song
+2025-04-02 00:46:15 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:46:37 - INFO - downloader.py - download_stream():126- Downloading stream with itag 303 (1080p)
+2025-04-02 00:46:41 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/song.webm
+2025-04-02 00:46:59 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-02 00:47:17 - INFO - downloader.py - download_stream():126- Downloading stream with itag 139 (48kbps)
+2025-04-02 00:47:17 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/song.mp4
+2025-04-03 15:18:11 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
+2025-04-03 15:19:29 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 15:19:30 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/iwasalone.webm
