@@ -61,3 +61,35 @@
 2025-04-03 15:18:11 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=fh-yNTVM9WE&list=RDfh-yNTVM9WE&start_radio=1
 2025-04-03 15:19:29 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
 2025-04-03 15:19:30 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/iwasalone.webm
+2025-04-03 20:15:19 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=EWPjq1kLaQY
+2025-04-03 20:16:04 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:16:08 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/lamour_toujours.webm
+2025-04-03 20:17:34 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=N1-6L1pNkfo
+2025-04-03 20:17:55 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:17:56 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/lucky_lucky
+2025-04-03 20:18:25 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=ekW-i0KlU1U
+2025-04-03 20:18:45 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:18:46 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/miss_you
+2025-04-03 20:19:57 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-04-03 20:20:18 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:20:19 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/psycho_dreams/homeabdelkrimMusic
+2025-04-03 20:22:43 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=7B44gyvBsTA
+2025-04-03 20:23:03 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:23:03 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/bailando.webm
+2025-04-03 20:23:36 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: 
+2025-04-03 20:23:36 - ERROR - downloader.py - __init__():44- Failed to create YouTube object: regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*
+2025-04-03 20:23:39 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=KvMY1uzSC1E
+2025-04-03 20:24:01 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:24:03 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/stay_at_your_house.webm
+2025-04-03 20:24:35 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=Lgs9QUtWc3M
+2025-04-03 20:25:21 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:25:22 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/better_off_alone.webm
+2025-04-03 20:26:02 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=qgnKpbnbAdg
+2025-04-03 20:26:17 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:26:17 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/stereo_love.webm
+2025-04-03 20:26:47 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=lyuFLU2Zqz0
+2025-04-03 20:27:05 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:27:25 - ERROR - downloader.py - download_stream():132- Download failed for itag 251: <urlopen error [Errno -2] Name or service not known>
+2025-04-03 20:29:15 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=RAeWDVIPrk0
+2025-04-03 20:29:33 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
+2025-04-03 20:29:34 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/how_do_you_do.webm

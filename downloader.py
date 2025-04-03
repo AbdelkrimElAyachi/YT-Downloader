@@ -1,8 +1,7 @@
 from pytubefix import YouTube
 from pytubefix.streams import Stream
-from typing import List, Optional, Union, Any, Dict, Tuple, TypeVar
+from typing import List, Optional, Any, Dict, Callable
 import logging
-from pathlib import Path
 
 
 class Downloader:
@@ -33,8 +32,6 @@ class Downloader:
         
         self.url = url
         self.logger = custom_logger or logging.getLogger(__name__)
-        # create formatter and add it to the handlers
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         
         try:
             self.logger.info(f"Creating YouTube object for URL: {url}")
@@ -42,9 +39,9 @@ class Downloader:
             
         except Exception as e:
             self.logger.error(f"Failed to create YouTube object: {e}")
-            raise Error(f"Invalid YouTube URL or connection error: {e}")
+            raise Exception(f"Invalid YouTube URL or connection error: {e}")
     
-    def _safe_operation(self, operation: callable, error_message: str, *args, **kwargs) -> Optional:
+    def _safe_operation(self, operation: Callable, error_message: str, *args, **kwargs) -> Optional[Any]:
         """
         Internal method to safely execute operations with proper error handling.
         
@@ -176,7 +173,7 @@ class Downloader:
         Returns:
             Highest bitrate audio stream or None if no streams available
         """
-        audios = self.get_audios()
+        audios = self.get_audios_only()
         return max(audios, key=lambda x: int(x.abr[:-5]) if x.abr else 0, default=None) if audios else None
     
     def download_highest_resolution(self, output_path: Optional[str] = None) -> Optional[str]:
