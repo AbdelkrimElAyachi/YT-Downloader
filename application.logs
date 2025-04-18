@@ -93,3 +93,33 @@
 2025-04-03 20:29:15 - INFO - downloader.py - __init__():40- Creating YouTube object for URL: https://www.youtube.com/watch?v=RAeWDVIPrk0
 2025-04-03 20:29:33 - INFO - downloader.py - download_stream():126- Downloading stream with itag 251 (160kbps)
 2025-04-03 20:29:34 - INFO - downloader.py - download_stream():128- Download complete: /home/abdelkrim/Music/how_do_you_do.webm
+2025-04-05 17:26:22 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 17:26:46 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-05 17:26:47 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/pop_in_2.webm/homeabdelkrimMusic
+2025-04-05 17:28:09 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 17:28:30 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-05 17:28:30 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/pop_in_2.webm/homeabdelkrimMusic
+2025-04-05 17:29:12 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 17:29:25 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-05 17:29:25 - ERROR - downloader.py - download_stream():129- Download failed for itag 251: [Errno 21] Is a directory: '/home/abdelkrim/Desktop/projects/yt-downloader/pop_in_2.webm'
+2025-04-05 17:29:54 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 17:30:19 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-05 17:30:20 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/popin2.webm/homeabdelkrimMusic
+2025-04-05 17:30:51 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 17:31:12 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-05 17:31:13 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/popin2.webm/......Music
+2025-04-05 17:32:23 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 17:32:38 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-05 17:32:38 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/popin2.webm/homeabdelkrimMusic
+2025-04-05 17:34:47 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 17:35:01 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-05 17:35:01 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/popin2.webm/homeabdelkrimMusic
+2025-04-05 18:31:16 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 18:33:22 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 18:35:28 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-05 18:35:28 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/popin2.webm
+2025-04-05 18:36:35 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 18:36:46 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 18:36:54 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
+2025-04-05 18:37:10 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-05 18:37:11 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/popin2.webm

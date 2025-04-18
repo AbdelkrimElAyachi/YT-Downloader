@@ -2,7 +2,6 @@ from downloader import Downloader
 import os
 import logging
 from cli import LoadingAnimation, printS
-from pprint import pprint
 
 # variables we are going to use
 URL = None
@@ -64,12 +63,12 @@ if __name__ == "__main__":
     itag = input()
 
     printS("Enter the path when you want to save the downloaded file : ",color="RED",style="BOLD",sep="",end="")
-    output_path = input()
+    out_path = input()
 
     printS("What do you want to name the file : ",color="RED",style="BOLD",sep="",end="")
-    file_name = input()
+    file_nm = input()
 
     with LoadingAnimation("Downloading... ") as load:
         load.switch_to_spinner() 
-        downloader.download_stream(itag=itag,output_path=output_path,filename=file_name)
-    printS("finished Downloading succefuly : "+downloader.yt.title+" as "+file_name,color="GREEN")
+        downloader.download_stream(itag=int(itag),output_path=out_path,filename=file_nm)
+    printS("finished Downloading succefuly : "+downloader.yt.title+" as "+file_nm,color="GREEN")
