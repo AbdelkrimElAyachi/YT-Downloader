@@ -68,7 +68,11 @@ if __name__ == "__main__":
     printS("What do you want to name the file : ",color="RED",style="BOLD",sep="",end="")
     file_nm = input()
 
+    res = None
     with LoadingAnimation("Downloading... ") as load:
         load.switch_to_spinner() 
-        downloader.download_stream(itag=int(itag),output_path=out_path,filename=file_nm)
-    printS("finished Downloading succefuly : "+downloader.yt.title+" as "+file_nm,color="GREEN")
+        res = downloader.download_stream(itag=int(itag),output_path=out_path,filename=file_nm)
+    if(res):
+        printS("finished Downloading succefuly : "+downloader.yt.title+" as "+file_nm,color="GREEN")
+    else:
+        printS("\nDOWNLOAD FAILED !!!\n",color="RED",style="BOLD")

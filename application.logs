@@ -123,3 +123,55 @@
 2025-04-05 18:36:54 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=c7E-tgmFuzw
 2025-04-05 18:37:10 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
 2025-04-05 18:37:11 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/popin2.webm
+2025-04-18 21:16:52 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-04-18 21:17:16 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-18 21:17:16 - ERROR - downloader.py - download_stream():129- Download failed for itag 251: [Errno 13] Permission denied: '/Music'
+2025-04-18 21:38:27 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-04-18 21:38:44 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-18 21:38:44 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/Music/killeva
+2025-04-18 21:39:02 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-04-18 21:39:18 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-18 21:39:18 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/~/Music/killeva
+2025-04-18 21:40:07 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-04-18 21:40:19 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-18 21:40:19 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/killeva
+2025-04-18 21:42:25 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-04-18 21:42:33 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-18 21:42:33 - ERROR - downloader.py - download_stream():129- Download failed for itag 251: [Errno 13] Permission denied: '/Music'
+2025-04-18 21:44:53 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-04-18 21:45:08 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-18 21:45:08 - ERROR - downloader.py - download_stream():129- Download failed for itag 251: [Errno 13] Permission denied: '/Music'
+2025-04-18 21:46:18 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-04-18 21:46:26 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-18 21:46:26 - ERROR - downloader.py - download_stream():129- Download failed for itag 251: [Errno 13] Permission denied: '/Music'
+2025-04-18 21:52:53 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=D6DVTLvOupE
+2025-04-18 21:53:19 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-04-18 21:53:20 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/tataratatarata
+2025-05-04 19:43:16 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-05-04 19:45:15 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-05-04 19:45:41 - INFO - downloader.py - download_stream():123- Downloading stream with itag 394 (144p)
+2025-05-04 19:45:41 - ERROR - downloader.py - download_stream():129- Download failed for itag 394: [Errno 13] Permission denied: '/Videos'
+2025-05-04 19:46:11 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-05-04 19:46:52 - INFO - downloader.py - download_stream():123- Downloading stream with itag 394 (144p)
+2025-05-04 19:46:59 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/~/Videos/amv.mp4
+2025-05-04 19:50:19 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-05-04 19:50:43 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=xknnD47tcMU
+2025-05-04 19:51:02 - INFO - downloader.py - download_stream():123- Downloading stream with itag 394 (144p)
+2025-05-04 19:51:03 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Videos/amv
+2025-05-12 21:43:41 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: 
+2025-05-12 21:43:41 - ERROR - downloader.py - __init__():41- Failed to create YouTube object: regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*
+2025-05-12 21:43:47 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=ddXM6HX1PgU
+2025-05-12 21:44:13 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-05-12 21:44:13 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/dancing_anime
+2025-05-12 21:44:34 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=rptLcA0E4ps
+2025-05-12 21:44:48 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-05-12 21:44:52 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/lost_kittens
+2025-05-12 21:45:36 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=-mF_Xt0IKzY
+2025-05-12 21:45:59 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-05-12 21:46:00 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/how_far_we_come
+2025-05-12 21:46:34 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=M2UXb_bxQ2U
+2025-05-12 21:46:57 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-05-12 21:46:59 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/doing_fine
+2025-05-12 21:47:49 - INFO - downloader.py - __init__():37- Creating YouTube object for URL: https://www.youtube.com/watch?v=6SdHGWjYNKc
+2025-05-12 21:48:08 - INFO - downloader.py - download_stream():123- Downloading stream with itag 251 (160kbps)
+2025-05-12 21:48:10 - INFO - downloader.py - download_stream():125- Download complete: /home/abdelkrim/Music/hate_me
