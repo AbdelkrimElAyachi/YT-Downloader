@@ -14,7 +14,7 @@ class Downloader:
         logger (logging.Logger): Logger for the class
     """
     
-    def __init__(self, url: str, custom_logger: Optional[logging.Logger] = None, *args: Any) -> None:
+    def __init__(self, url: str=None, custom_logger: Optional[logging.Logger] = None, *args: Any) -> None:
         """
         Initialize the Downloader with a YouTube URL.
         
@@ -27,11 +27,12 @@ class Downloader:
             ValueError: If the URL is invalid or empty
             Error : If the URL is invalid or the connection is not established correctly
         """
+        self.logger = custom_logger or logging.getLogger(__name__)
+
         if not url:
-            raise ValueError("URL cannot be empty")
+            return
         
         self.url = url
-        self.logger = custom_logger or logging.getLogger(__name__)
         
         try:
             self.logger.info(f"Creating YouTube object for URL: {url}")
@@ -40,6 +41,22 @@ class Downloader:
         except Exception as e:
             self.logger.error(f"Failed to create YouTube object: {e}")
             raise Exception(f"Invalid YouTube URL or connection error: {e}")
+
+    def _set_url(url:str):
+
+        if not url:
+            raise ValueError("url should not be none")
+
+        self.url = url
+
+        try:
+            self.logger.info(f"Creating YouTube object for URL: {url}")
+            self.yt = YouTube(url, *args)
+            
+        except Exception as e:
+            self.logger.error(f"Failed to create YouTube object: {e}")
+            raise Exception(f"Invalid YouTube URL or connection error: {e}")
+
     
     def _safe_operation(self, operation: Callable, error_message: str, *args, **kwargs) -> Optional[Any]:
         """
