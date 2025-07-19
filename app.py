@@ -1,18 +1,13 @@
-from downloader import Downloader
 import os
 import logging
-from cli import LoadingAnimation, printS
-
-# variables we are going to use
-URL = None
-
-def print_array(array):
-    for ele in array:
-        print(ele)
+from sys import argv
+from utils import Downloader
+from utils import print_array
+from cli import LoadingAnimation, printS, is_one_line_command, read_arguments
 
 
 def loggin_config():
-    logging.basicConfig(filename="application.logs",
+    logging.basicConfig(filename="logs/application.logs",
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s():%(lineno)d- %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S'
@@ -20,7 +15,8 @@ def loggin_config():
     logger = logging.getLogger("application")
     return logger
 
-if __name__ == "__main__":
+
+def starter_message():
     message = "WELCOME to YT DOWNLOADER"
     try:
         console_width = os.get_terminal_size().columns - 1
@@ -29,6 +25,9 @@ if __name__ == "__main__":
     half_csl = (console_width-len(message))//2
     printS(half_csl*"-"+message+half_csl*"-",color="RED")
 
+
+def handle_cli_interactive_mode():
+    starter_message()
     logger = loggin_config()
 
     printS("enter url : ",color="RED",style="BOLD",sep="",end="")
@@ -57,22 +56,42 @@ if __name__ == "__main__":
             break
         else:
             printS("Warning wrong choise "+choice+" !!!",color="RED")
-    
+
+    itag = None
+    directory = None
+    file = None
+
     print_array(streams)
     printS("Stream itag (enter the itag of the stream you want to download): ",color="RED",style="BOLD",sep="",end="")
     itag = input()
 
-    printS("Enter the path when you want to save the downloaded file : ",color="RED",style="BOLD",sep="",end="")
-    out_path = input()
+    printS("Where do you want to save it : ",color="RED",style="BOLD",sep="",end="")
+    full_path = os.path.expanduser(input())
 
-    printS("What do you want to name the file : ",color="RED",style="BOLD",sep="",end="")
-    file_nm = input()
+    directory = os.path.dirname(full_path)
+    file = os.path.basename(full_path)
 
     res = None
+
     with LoadingAnimation("Downloading... ") as load:
         load.switch_to_spinner() 
-        res = downloader.download_stream(itag=int(itag),output_path=out_path,filename=file_nm)
+        res = downloader.download_stream(itag=int(itag),output_path=directory,filename=file)
     if(res):
-        printS("finished Downloading succefuly : "+downloader.yt.title+" as "+file_nm,color="GREEN")
+        printS("finished Downloading succefuly : "+downloader.yt.title+" as "+file,color="GREEN")
+        printS("FULL PATH : "+full_path,color="GREEN")
     else:
         printS("\nDOWNLOAD FAILED !!!\n",color="RED",style="BOLD")
+    return None
+
+
+def handle_cli_flags_mode():
+    print("not implementd yet")
+    return None
+
+
+
+if __name__ == "__main__":
+    if(is_one_line_command(argv)):
+        handle_cli_flags_mode()
+    else:
+        handle_cli_interactive_mode()

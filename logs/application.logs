@@ -1,0 +1,19 @@
+
+2025-07-19 16:28:39 - INFO - downloader.py - __init__():38- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ
+2025-07-19 16:29:11 - INFO - downloader.py - download_stream():140- Downloading stream with itag 136 (720p)
+2025-07-19 16:29:15 - INFO - downloader.py - download_stream():142- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/~/Music
+2025-07-19 16:37:18 - INFO - downloader.py - __init__():38- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ
+2025-07-19 16:37:39 - INFO - downloader.py - download_stream():140- Downloading stream with itag 399 (1080p)
+2025-07-19 16:37:39 - ERROR - downloader.py - download_stream():146- Download failed for itag 399: [Errno 21] Is a directory: '/home/abdelkrim/Music'
+2025-07-19 16:38:10 - INFO - downloader.py - __init__():38- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ
+2025-07-19 16:38:22 - INFO - downloader.py - download_stream():140- Downloading stream with itag 399 (1080p)
+2025-07-19 16:38:22 - ERROR - downloader.py - download_stream():146- Download failed for itag 399: [Errno 21] Is a directory: '/home/abdelkrim/Music'
+2025-07-19 16:38:52 - INFO - downloader.py - __init__():38- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ
+2025-07-19 16:39:04 - INFO - downloader.py - download_stream():140- Downloading stream with itag 399 (1080p)
+2025-07-19 16:39:10 - INFO - downloader.py - download_stream():142- Download complete: /home/abdelkrim/Music/test.mp3
+2025-07-19 16:44:44 - INFO - downloader.py - __init__():38- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ
+2025-07-19 16:45:09 - INFO - downloader.py - download_stream():140- Downloading stream with itag 399 (1080p)
+2025-07-19 16:45:13 - INFO - downloader.py - download_stream():142- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/test.mp3
+2025-07-19 16:46:13 - INFO - downloader.py - __init__():38- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ
+2025-07-19 16:46:35 - INFO - downloader.py - download_stream():140- Downloading stream with itag 140 (128kbps)
+2025-07-19 16:46:36 - INFO - downloader.py - download_stream():142- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/test.mp4
