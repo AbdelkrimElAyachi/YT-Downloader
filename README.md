@@ -1,14 +1,60 @@
-# Introduction
-**a basic app for downloading audio and videos from youtube**
+# 🎵 YouTube Stream Downloader
 
-## V1 Features
+**A lightweight tool for downloading audio and video streams from YouTube with full control over format and quality.**
 
-### COMPLETED
-- displaying list of **streams** based on their **type** (audio, video, progressive (both))
-- giving the user change to **download** the **stream** he wants by **itag**
-- basic **graphics** in CLI
-### IN DEVELOPEMENT
-- Basic **GUI** using pywebview
+---
 
-### FOR FUTURE
-- DOWNLOADING **HIGH QUALITY** video and audio (download audio stream separately from the audio and mergin them using **ffmpeg**)
+## 🎯 Purpose
+
+This tool is designed to offer users **flexible downloading options** for videos they are legally allowed to access.  
+It allows downloading:
+
+- **Audio-only** (e.g., for podcasts or lectures),
+- **Video-only** (e.g., for presentations or visuals),
+- Or **combined audio + video** in custom quality combinations.
+
+---
+
+## ✅ V1 Features
+
+### ✔️ COMPLETED
+- Display list of available **streams** categorized by type:
+  - **Audio-only**
+  - **Video-only**
+  - **Progressive** (audio + video combined)
+- Allow downloading by selecting **itag** of preferred stream
+- Basic **CLI interface** with structured output
+
+### 🚧 IN DEVELOPMENT
+- Simple **GUI** using `pywebview` for easier navigation
+
+### 🔮 PLANNED
+- Support for **high-quality merging**:
+  - Download **audio and video separately**
+  - Combine them using **FFmpeg** for highest quality output
+
+---
+
+## ⚖️ Disclaimer
+
+This tool is intended for **personal and educational use only**.  
+It does **not support or promote** downloading copyrighted content without permission.
+
+The responsibility for how this tool is used lies solely with the user.  
+Use only for:
+- Your own uploaded videos,
+- Public domain content,
+- Creative Commons–licensed videos,
+- Or other content you have the legal right to download.
+
+---
+
+> ⚠️ Please respect YouTube's [Terms of Service](https://www.youtube.com/t/terms) and all applicable copyright laws.
+
+## 🔒 Privacy Disclaimer
+
+This tool does **not collect, store, or transmit** any personal user data.  
+It connects **only directly to YouTube's servers** to fetch video and audio streams.  
+No additional analytics, tracking, or third-party data collection is performed.
+
+Your privacy is fully respected when using this application.

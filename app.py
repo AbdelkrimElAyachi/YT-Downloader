@@ -1,19 +1,7 @@
 import os
-import logging
 from sys import argv
-from utils import Downloader
-from utils import print_array
-from cli import LoadingAnimation, printS, is_one_line_command, read_arguments
-
-
-def loggin_config():
-    logging.basicConfig(filename="logs/application.logs",
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s():%(lineno)d- %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S'
-    )
-    logger = logging.getLogger("application")
-    return logger
+from utils import Downloader, print_array
+from cli import LoadingAnimation, printS, is_one_line_command
 
 
 def starter_message():
@@ -28,12 +16,11 @@ def starter_message():
 
 def handle_cli_interactive_mode():
     starter_message()
-    logger = loggin_config()
 
     printS("enter url : ",color="RED",style="BOLD",sep="",end="")
     URL = input("")
 
-    downloader = Downloader(URL, logger)
+    downloader = Downloader(URL)
 
     printS("Options : ",color="RED")
     print("[1] Videos only")

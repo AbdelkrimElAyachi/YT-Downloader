@@ -1,7 +1,7 @@
 from pytubefix import YouTube
 from pytubefix.streams import Stream
 from typing import List, Optional, Any, Dict, Callable
-import logging
+from utils.logger import logger 
 
 
 class Downloader:
@@ -14,7 +14,7 @@ class Downloader:
         logger (logging.Logger): Logger for the class
     """
     
-    def __init__(self, url: str=None, custom_logger: Optional[logging.Logger] = None, *args: Any) -> None:
+    def __init__(self, url: str, *args: Any) -> None:
         """
         Initialize the Downloader with a YouTube URL.
         
@@ -27,34 +27,17 @@ class Downloader:
             ValueError: If the URL is invalid or empty
             Error : If the URL is invalid or the connection is not established correctly
         """
-        self.logger = custom_logger or logging.getLogger(__name__)
-
         if not url:
             return
         
         self.url = url
         
         try:
-            self.logger.info(f"Creating YouTube object for URL: {url}")
+            logger.info(f"Creating YouTube object for URL: {url}")
             self.yt = YouTube(url, *args)
             
         except Exception as e:
-            self.logger.error(f"Failed to create YouTube object: {e}")
-            raise Exception(f"Invalid YouTube URL or connection error: {e}")
-
-    def _set_url(url:str):
-
-        if not url:
-            raise ValueError("url should not be none")
-
-        self.url = url
-
-        try:
-            self.logger.info(f"Creating YouTube object for URL: {url}")
-            self.yt = YouTube(url, *args)
-            
-        except Exception as e:
-            self.logger.error(f"Failed to create YouTube object: {e}")
+            logger.error(f"Failed to create YouTube object: {e}")
             raise Exception(f"Invalid YouTube URL or connection error: {e}")
 
     
@@ -73,7 +56,7 @@ class Downloader:
         try:
             return operation(*args, **kwargs)
         except Exception as e:
-            self.logger.error(f"{error_message}: {e}")
+            logger.error(f"{error_message}: {e}")
             return None
     
     def get_audios_only(self) -> List[Stream]:
@@ -128,7 +111,7 @@ class Downloader:
         try:
             stream = self.yt.streams.get_by_itag(itag)
             if not stream:
-                self.logger.error(f"No stream found with itag: {itag}")
+                logger.error(f"No stream found with itag: {itag}")
                 return None
                 
             kwargs = {}
@@ -137,13 +120,13 @@ class Downloader:
             if filename:
                 kwargs['filename'] = filename
                 
-            self.logger.info(f"Downloading stream with itag {itag} ({stream.resolution or stream.abr})")
+            logger.info(f"Downloading stream with itag {itag} ({stream.resolution or stream.abr})")
             file_path = stream.download(**kwargs)
-            self.logger.info(f"Download complete: {file_path}")
+            logger.info(f"Download complete: {file_path}")
             return file_path
             
         except Exception as e:
-            self.logger.error(f"Download failed for itag {itag}: {e}")
+            logger.error(f"Download failed for itag {itag}: {e}")
             return None
     
     def get_video_info(self) -> Dict[str, Any]:
@@ -153,7 +136,7 @@ class Downloader:
         Returns:
             Dictionary containing video information
         """
-        self.logger.debug(f"Fetching video info for {self.url}")
+        logger.debug(f"Fetching video info for {self.url}")
         
         try:
             info = {
@@ -166,11 +149,11 @@ class Downloader:
                 "thumbnail_url": self.yt.thumbnail_url,
                 "rating": self.yt.rating
             }
-            self.logger.info(f"Retrieved info for video: {info['title']}")
+            logger.info(f"Retrieved info for video: {info['title']}")
             return info
             
         except Exception as e:
-            self.logger.error(f"Error getting video info: {e}")
+            logger.error(f"Error getting video info: {e}")
             return {}
     
     def get_highest_resolution(self) -> Optional[Stream]:
@@ -205,7 +188,7 @@ class Downloader:
         """
         stream = self.get_highest_resolution()
         if not stream:
-            self.logger.error("No video streams available")
+            logger.error("No video streams available")
             return None
         
         return self.download_stream(stream.itag, output_path)
@@ -222,7 +205,7 @@ class Downloader:
         """
         stream = self.get_best_audio()
         if not stream:
-            self.logger.error("No audio streams available")
+            logger.error("No audio streams available")
             return None
         
         return self.download_stream(stream.itag, output_path)

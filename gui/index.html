@@ -5,13 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yt videos downloader</title>
     <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
         body{
-            background-color: #333;
+            background-color: #fff;
+        }
+        /* layout style */
+        .container{
+            display:flex;
+            flex-direction:column;
+            gap:2rem;
+        }
+        .header{
+            padding: 0.6rem 1.2rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #4e5a87;
+        }
+        .main{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            gap:1rem;
+        }
+        .choices{
+            margin-top:2rem;
+            display:flex;
+            width:80%;
+        }
+        .videos,.audios{
+            width:50%;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+        .btn_container div:first-child{
+            height:5px;
+            background:#5cb85c;
+            width:80%;
+            margin-bottom:1rem;
+            margin-top:1rem;
+        }
+        .btn_container{
+            width:100%;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+
+        /* components styles */
+        .info{
+            width: 25px;
+            height: 25px;
+            fill: white;
+        }
+        .title{
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .url{
+            width: 80%;
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+        }
+        .thumbnail{
+            object-fit: contain;
+            width: 80%;
+        }
+        .hidden_elements{
+            display: none;
+        }
+        .btn{
+            border-radius:5px;
+            border:none;
+            color:white;
+            width: 100px;
+            padding: 0.6rem 1.2rem;
+            font-weigh: bold;
+            margin: 0 auto;
+            background: #5cb85c;
+        }
+        .btn:hover{
+            background: #4ca84c;
+            cursor:pointer;
+        }
+        .error-message{
+            color:red;
+        }
+        .video-title{
+            color:green;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <p class="title">YT Stream downloader</p>
+            <svg class="info" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M12,24A12,12,0,1,0,0,12,12.013,12.013,0,0,0,12,24ZM12,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,12,5Zm-1,5h1a2,2,0,0,1,2,2v6a1,1,0,0,1-2,0V12H11a1,1,0,0,1,0-2Z"/></svg>
+        </div>
+        <div class="main">
+            <input class="url" type="url" id="url" required name="url" placeholder="https://www.youtube.com/watch?v=h" />
+            <p class="error-message" id="error-message"></p>
+            <p class="video-title" id="video-title"></p>
+            <img class="thumbnail hidden_elements" id="thumbnail" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/youtube-thumbnail-template-design-5fa9cd79a6367f8446a5208e4540a493_screen.jpg?ts=1699135222" alt="this video url" />
+
+            <div class="choices">
+                <div class="videos">
+                    <label>
+                        <input type="radio" name="video" value="1080" />
+                        1080p | 2.01M
+                    </label>
+                    <label>
+                        <input type="radio" name="video" value="1080" />
+                        720p | 1.51M
+                    </label>
+                </div>
+                <div class="audios">
+                    <label>
+                        <input type="radio" name="audio" value="1080" />
+                        MP3 | 1.55M
+                    </label>
+                    <label>
+                        <input type="radio" name="audio" value="1080" />
+                        WEBM | 0.51M
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="btn_container">
+            <div></div>
+            <button type="button" class="btn">Download</button>
+        </div>
+    </div>
     <script>
+        const urlInput = document.getElementById("url");
+        const errorMessage = document.getElementById("error-message");
+        const eleVideoTitle = document.getElementById("video-title");
+        const eleThumbnail = document.getElementById("thumbnail");
+        let timeoutId;
+
+        // video informations
+        let thumbnailUrl;
+        let videoTitle;
+
+        urlInput.addEventListener('input', ()=>{
+            clearTimeout(timeoutId);
+            if(!urlInput.checkValidity()){
+                errorMessage.textContent = "Please enter a valid URL";
+            }
+            else{
+                errorMessage.textContent = "";
+
+                timeoutId = setTimeout(async ()=>{
+                    await set_url(urlInput.value)
+                },1000)
+            }
+        })
+
+        async function set_url(url){
+            await window.pywebview.api.set_url(url)
+            await retrieve_video_title();
+            await retrieve_video_thumbnail()
+        }
+
+        async function retrieve_video_title(){
+            videoTitle = await window.pywebview.api.retrieve_video_title()
+            eleVideoTitle.textContent = videoTitle;
+        }
+
+        async function retrieve_video_thumbnail(){
+            thumbnailUrl = await window.pywebview.api.retrieve_thumbnail_url()
+            eleThumbnail.src = thumbnailUrl;
+            eleThumbnail.classList.remove("hidden_elements")
+        }
+
     </script>
 </body>
 </html>

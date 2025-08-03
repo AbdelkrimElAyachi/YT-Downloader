@@ -17,3 +17,47 @@
 2025-07-19 16:46:13 - INFO - downloader.py - __init__():38- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ
 2025-07-19 16:46:35 - INFO - downloader.py - download_stream():140- Downloading stream with itag 140 (128kbps)
 2025-07-19 16:46:36 - INFO - downloader.py - download_stream():142- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/test.mp4
+2025-08-03 14:00:25 - ERROR - util.py - _call():245- Traceback (most recent call last):
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/utils/downloader.py", line 36, in __init__
+    logger.info(f"Creating YouTube object for URL: {url}")
+AttributeError: module 'utils.logger' has no attribute 'info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 241, in _call
+    result = func(*func_params)
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/test.py", line 11, in set_url
+    self.downloader = Downloader(url)
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/utils/downloader.py", line 40, in __init__
+    logger.error(f"Failed to create YouTube object: {e}")
+AttributeError: module 'utils.logger' has no attribute 'error'
+
+2025-08-03 14:05:14 - ERROR - util.py - _call():245- Traceback (most recent call last):
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/utils/downloader.py", line 36, in __init__
+    logger.info(f"Creating YouTube object for URL: {url}")
+AttributeError: module 'utils.logger' has no attribute 'info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 241, in _call
+    result = func(*func_params)
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/test.py", line 11, in set_url
+    self.downloader = Downloader(url)
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/utils/downloader.py", line 40, in __init__
+    logger.error(f"Failed to create YouTube object: {e}")
+AttributeError: module 'utils.logger' has no attribute 'error'
+
+2025-08-03 14:07:03 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-03 14:14:54 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-03 14:16:13 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-03 14:17:18 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-03 14:17:19 - ERROR - util.py - _call():245- Traceback (most recent call last):
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 241, in _call
+    result = func(*func_params)
+TypeError: API.retrieve_video_title() takes 1 positional argument but 2 were given
+
+2025-08-03 14:18:30 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-03 14:22:53 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-03 14:23:51 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
