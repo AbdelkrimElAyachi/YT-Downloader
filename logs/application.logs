@@ -61,3 +61,92 @@ TypeError: API.retrieve_video_title() takes 1 positional argument but 2 were giv
 2025-08-03 14:18:30 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
 2025-08-03 14:22:53 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
 2025-08-03 14:23:51 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-10 11:29:54 - INFO - downloader.py - __init__():36- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-10 11:58:35 - ERROR - util.py - _call():245- Traceback (most recent call last):
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 241, in _call
+    result = func(*func_params)
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/test.py", line 26, in close
+    webview.destroy_window()
+AttributeError: module 'webview' has no attribute 'destroy_window'
+
+2025-08-10 12:02:20 - ERROR - util.py - _call():245- Traceback (most recent call last):
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 241, in _call
+    result = func(*func_params)
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/test.py", line 29, in close
+    webview.destroy_window()
+AttributeError: module 'webview' has no attribute 'destroy_window'
+
+2025-08-10 12:03:10 - ERROR - util.py - generate_js_object():224- unable to get the value
+Traceback (most recent call last):
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 217, in generate_js_object
+    func_list = generate_func()
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 199, in generate_func
+    functions = get_functions(window._js_api)
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 194, in get_functions
+    get_functions(attr, full_name, functions)
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 194, in get_functions
+    get_functions(attr, full_name, functions)
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 189, in get_functions
+    attr = getattr(obj, name)
+RuntimeError: unable to get the value
+2025-08-11 09:06:43 - INFO - downloader.py - __init__():16- Creating YouTube object for URL: https://www.youtube.com/watch?v=GFTDR8_q63M
+2025-08-11 09:10:04 - INFO - downloader.py - __init__():16- Creating YouTube object for URL: https://www.youtube.com/watch?v=GFTDR8_q63M
+2025-08-11 09:10:17 - INFO - downloader.py - __init__():16- Creating YouTube object for URL: https://www.youtube.com/watch?v=7pK_mjC_Ei0
+2025-08-11 09:12:07 - INFO - downloader.py - __init__():16- Creating YouTube object for URL: https://www.youtube.com/watch?v=7pK_mjC_Ei0
+2025-08-11 09:12:15 - INFO - downloader.py - __init__():16- Creating YouTube object for URL: https://www.youtube.com/watch?v=7pK_mjC_Ei0
+2025-08-11 15:50:22 - INFO - downloader.py - __init__():16- Creating YouTube object for URL: https://www.youtube.com/watch?v=8mMH6Pq8qnE
+2025-08-11 15:51:38 - INFO - downloader.py - __init__():16- Creating YouTube object for URL: https://www.youtube.com/watch?v=8mMH6Pq8qnE
+2025-08-11 18:47:31 - INFO - downloader.py - __init__():16- Creating YouTube object for URL: https://www.youtube.com/watch?v=8mMH6Pq8qnE
+2025-08-11 18:47:32 - ERROR - util.py - _call():245- Traceback (most recent call last):
+  File "/home/abdelkrim/.local/lib/python3.10/site-packages/webview/util.py", line 241, in _call
+    result = func(*func_params)
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/test.py", line 30, in retrieve_videos_resolutions
+    return self.downloader.get_videos_resolutions()
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/utils/downloader.py", line 91, in get_videos_resolutions
+    for stream in self.get_videos_only()
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/utils/downloader.py", line 59, in get_videos_only
+    return self._safe_operation(
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/utils/downloader.py", line 35, in _safe_operation
+    self._get_streams()
+  File "/home/abdelkrim/Desktop/projects/yt-downloader/utils/downloader.py", line 24, in _get_streams
+    if self.streams is None:
+AttributeError: 'Downloader' object has no attribute 'streams'
+
+2025-08-11 18:49:50 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=8mMH6Pq8qnE
+2025-08-11 18:55:56 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=8mMH6Pq8qnE
+2025-08-11 18:56:57 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=8mMH6Pq8qnE
+2025-08-11 19:02:52 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=8mMH6Pq8qnE
+2025-08-12 10:22:51 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-12 11:36:53 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-12 11:38:25 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-12 11:39:14 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-12 11:41:04 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-12 11:43:18 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=UFyxfQ1VkWQ&list=RDUFyxfQ1VkWQ&start_radio=1
+2025-08-12 14:38:08 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=8lt_k_3Ztvk
+2025-08-12 14:52:36 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=8lt_k_3Ztvk
+2025-08-12 14:53:02 - INFO - downloader.py - download_stream():80- Downloading stream with itag 298 : (720p)
+2025-08-12 14:53:22 - INFO - downloader.py - download_stream():82- Download complete: /home/abdelkrim/Desktop/video.mp4
+2025-08-12 14:58:21 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=8lt_k_3Ztvk
+2025-08-12 17:02:47 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=8lt_k_3Ztvk
+2025-08-12 17:03:08 - INFO - downloader.py - download_stream():80- Downloading stream with itag 139 : (48kbps)
+2025-08-12 17:03:12 - INFO - downloader.py - download_stream():82- Download complete: /home/abdelkrim/Desktop/audio.mp4
+2025-08-12 17:12:18 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/shorts/cLIzhKbpNbg
+2025-08-12 17:12:38 - INFO - downloader.py - download_stream():80- Downloading stream with itag 140 : (128kbps)
+2025-08-12 17:12:39 - INFO - downloader.py - download_stream():82- Download complete: /home/abdelkrim/Desktop/audio.mp4
+2025-08-12 17:13:46 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/shorts/cLIzhKbpNbg
+2025-08-12 17:14:11 - INFO - downloader.py - download_stream():80- Downloading stream with itag 134 : (360p)
+2025-08-12 17:14:12 - INFO - downloader.py - download_stream():82- Download complete: /home/abdelkrim/Desktop/projects/yt-downloader/video.mp4
+2025-08-12 17:15:13 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/shorts/cLIzhKbpNbg
+2025-08-12 17:15:53 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/shorts/cLIzhKbpNbg
+2025-08-12 17:16:01 - INFO - downloader.py - download_stream():80- Downloading stream with itag 134 : (360p)
+2025-08-12 17:16:02 - INFO - downloader.py - download_stream():82- Download complete: /home/abdelkrim/Desktop/they're beyond helping..mp4
+2025-08-12 17:36:31 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/shorts/cLIzhKbpNbg
+2025-08-12 17:36:40 - INFO - downloader.py - download_stream():80- Downloading stream with itag 247 : (720p)
+2025-08-12 17:36:41 - INFO - downloader.py - download_stream():82- Download complete: /tmp/tmprp42zeq1/video.mp4
+2025-08-12 17:36:41 - INFO - downloader.py - download_stream():80- Downloading stream with itag 251 : (160kbps)
+2025-08-12 17:36:41 - INFO - downloader.py - download_stream():82- Download complete: /tmp/tmprp42zeq1/audio.mp3
+2025-08-12 17:39:00 - INFO - downloader.py - __init__():17- Creating YouTube object for URL: https://www.youtube.com/watch?v=zgaCZOQCpp8&list=RDzgaCZOQCpp8&start_radio=1
+2025-08-12 17:39:40 - INFO - downloader.py - download_stream():80- Downloading stream with itag 137 : (1080p)
+2025-08-12 17:39:43 - INFO - downloader.py - download_stream():82- Download complete: /tmp/tmpg8mhv2p9/video.mp4
+2025-08-12 17:39:43 - INFO - downloader.py - download_stream():80- Downloading stream with itag 139 : (48kbps)
+2025-08-12 17:39:43 - INFO - downloader.py - download_stream():82- Download complete: /tmp/tmpg8mhv2p9/audio.mp3
