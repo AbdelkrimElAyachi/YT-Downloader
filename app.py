@@ -33,13 +33,13 @@ def handle_cli_interactive_mode():
     streams = None
     while True:
         if(choice == "1"):
-            streams = downloader.get_videos_only()
+            streams = downloader.get_streams(only_video=True)
             break
         elif(choice == "2"):
-            streams = downloader.get_audios_only()
+            streams = downloader.get_streams(only_audio=True)
             break
         elif(choice == "3"):
-            streams = downloader.get_videos()
+            streams = downloader.get_streams(progressive=True)
             break
         else:
             printS("Warning wrong choise "+choice+" !!!",color="RED")
@@ -53,10 +53,12 @@ def handle_cli_interactive_mode():
     itag = input()
 
     printS("Where do you want to save it : ",color="RED",style="BOLD",sep="",end="")
-    full_path = os.path.expanduser(input())
+    directory = os.path.expanduser(input())
 
-    directory = os.path.dirname(full_path)
-    file = os.path.basename(full_path)
+    printS("What do you want to name it : ",color="RED",style="BOLD",sep="",end="")
+    file  = input()
+
+    full_path = os.path.join(directory, file)
 
     res = None
 

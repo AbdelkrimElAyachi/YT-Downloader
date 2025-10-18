@@ -1,101 +1,101 @@
-from pytubefix import YouTube
+from pytubefix import YouTube, exceptions as pt_exceptions
 from pytubefix.streams import Stream
-from typing import List, Optional, Any, Callable, Iterable, Tuple 
-from utils.logger import logger 
-
+from typing import List, Optional, Any
+from logger import logger
+import os
 
 class Downloader:
-    """pytubefix YouTube downloader wrapper."""
-    
     def __init__(self, url: str, *args: Any) -> None:
-        """Init Downloader; raise on invalid URL or connection error."""
-        self.streams = None
         if not url:
-            return
+            raise ValueError("No URL provided !!!")
         self.url = url
         try:
             logger.info(f"Creating YouTube object for URL: {url}")
             self.yt = YouTube(url, *args)
+        except pt_exceptions.RegexMatchError as e:
+            logger.error(f"The provided URL is not a valid youtube URL : {e}")
+            raise ValueError(f"The provided URL is not a valid youtube URL") from e
+        except pt_exceptions.VideoUnavailable as e:
+            logger.error(f"Video unavailable for url {url} Error : {e}")
+            raise ValueError(f"Video unavailable for url {url}") from e
         except Exception as e:
-            logger.error(f"Failed to create YouTube object: {e}")
-            raise Exception(f"Invalid YouTube URL or connection error: {e}")
+            logger.error(f"Unexpected error while creating yt object : {e}")
+            raise ValueError(f"Unexpected error while accessing youtube") from e
 
-    def _get_streams(self) -> Optional[Iterable[Stream]]:
-        """Retrieve the streams and cache them in case we need them agains."""
-        if self.streams is None:
-            try:
-                self.streams = self.yt.streams
-            except Exception as e:
-                logger.error(f"Failed to retrieve streams : {e}")
-        return self.streams
-
-
+    @property
+    def streams(self):
+        if not hasattr(self, "_streams"):
+            self._streams = self.yt.streams
+        return self._streams
     
-    def _safe_operation(self, operation: Callable, error_message: str, *args, **kwargs) -> Optional[Any]:
-        """Run a callable safely; return None on error."""
-        self._get_streams()
+    def get_streams(self, only_audio=False, only_video=False, progressive=False) -> List[Stream]:
         try:
-            return operation(*args, **kwargs)
+            return list(self.streams.filter(only_audio=only_audio, only_video=only_video, progressive=progressive))
         except Exception as e:
-            logger.error(f"{error_message}: {e}")
-            return None
-    
-    def get_audios_only(self) -> List[Stream]:
-        """Return all audio streams or empty list if failed."""
-        return self._safe_operation(
-            lambda: self.streams.filter(only_audio=True),
-            "Failed to retrieve audio streams"
-        ) or []
-    
-    def get_videos(self) -> List[Stream]:
-        """Return all progressive (video+audio) streams or empty list if failed."""
-        return self._safe_operation(
-            lambda: self.streams.filter(progressive=True),
-            "Failed to retrieve progressive video streams"
-        ) or []
-    
-
-    def get_videos_only(self) -> List[Stream]:
-        """Return video-only streams or empty list if unavailable."""
-        return self._safe_operation(
-            lambda: self.streams.filter(only_video=True),
-            "Failed to retrieve video-only streams"
-        ) or []
-    
-
+            logger.error(f"Failed to get streams {e}")
+            return []
+        
     def download_stream(self, itag: int, output_path: Optional[str] = None, filename: Optional[str] = None) -> Optional[str]:
-        """Download stream by itag; return file path or None if failed."""
+        if itag is None:
+            msg = "No itag provided. Please specify a stream itag to download"
+            logger.error(msg)
+            raise ValueError(msg)
         try:
             stream = self.streams.get_by_itag(itag)
             if not stream:
-                logger.error(f"No stream found with itag: {itag}")
-                return None
+                msg = f"No stream found with itag: {itag}"
+                logger.error(msg)
+                raise ValueError(msg)
+
+           # Determine extension from stream
+            ext = stream.subtype  # e.g., "mp4" or "webm"
                 
-            kwargs = {}
-            if output_path:
-                kwargs['output_path'] = output_path
-            if filename:
-                kwargs['filename'] = filename
+            if filename and not filename.endswith(f".{ext}"):
+                filename = f"{filename}.{ext}"
+            elif not filename:
+                filename = stream.default_filename
+
+            if not output_path:
+                output_path = os.getcwd() 
+
+            os.makedirs(output_path, exist_ok=True)
                 
             logger.info(f"Downloading stream with itag {itag} : ({stream.resolution or stream.abr})")
-            file_path = stream.download(**kwargs)
+            file_path = stream.download(output_path=output_path, filename=filename)
             logger.info(f"Download complete: {file_path}")
             return file_path
             
         except Exception as e:
-            logger.error(f"Download failed for itag {itag}: {e}")
-            return None
+            msg = f"Download failed for itag {itag}: {e}"
+            logger.error(msg)
+            raise RuntimeError(msg) from e
     
-    def get_videos_resolutions(self) -> List[Tuple[int, str, float]]:
-        return [
-                (stream.itag, stream.resolution, round(stream.filesize / (1024*1024), 2) )
-                for stream in self.get_videos_only()
-                if stream.resolution is not None
-        ]
+    def get_streams_info(self) -> List[dict]:
+        streams_info = []
 
-    def get_audios_bit_rates(self) -> List[Tuple[int, str, float]]:
-        return [
-                (stream.itag, stream.abr, round(stream.filesize / (1024*1024), 2))
-                for stream in self.get_audios_only()
-                if stream.abr is not None
-        ]
+        all_streams = (
+            self.get_streams(only_audio=True) +
+            self.get_streams(only_video=True)
+        )
+
+        for stream in all_streams:
+
+            if stream.includes_audio_track and not stream.includes_video_track:
+                stream_type = "audio"
+            elif stream.includes_video_track and not stream.includes_audio_track:
+                stream_type = "video"
+            else:
+                stream_type = "unknown"
+
+            stream_size_mb = round(stream.filesize / (1024*1024), 2) if stream.filesize else 0
+            stream_resolution = getattr(stream, "resolution", None)
+            stream_abr = getattr(stream, 'abr', None)
+
+            streams_info.append({
+                    "itag": stream.itag,
+                    "type": stream_type,
+                    "size": stream_size_mb,
+                    "resolution": stream_resolution,
+                    "abr": stream_abr
+                })
+        return streams_info

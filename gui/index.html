@@ -310,10 +310,9 @@
             await window.pywebview.api.set_url(url)
             await retrieve_video_title();
             await retrieve_video_thumbnail()
-            const video_resolutions = await retrieve_videos_resolutions(); 
-            const audio_bits_ratio = await retrieve_audios_bit_rates(); 
-            render_videos(video_resolutions)
-            render_audios(audio_bits_ratio)
+            const infos = await retrieve_streams_info(); 
+            render_videos(infos)
+            render_audios(infos)
         }
 
         async function retrieve_video_title(){
@@ -324,12 +323,15 @@
         function render_videos(arr){
             let html = "";
             for (let i=0; i<arr.length; i++){
-                html += `
-                     <label class="custom-control-label">
-                    <input type="radio" class="custom-control-input" name="video" value="${arr[i][0]}" />
-                    ${arr[i][1]} | ${arr[i][2]}M
-                    </label>                   
-                `
+                if(arr[i]["type"] == "video"){
+                    html += `
+                        <label class="custom-control-label">
+                        <input type="radio" class="custom-control-input" name="video" value="${arr[i]['itag']}" />
+                        ${arr[i]['resolution']} | ${arr[i]['size']}M
+                        </label>                   
+                    `
+                }
+                
             }
             videosEle.innerHTML = html;
         }
@@ -337,12 +339,14 @@
         function render_audios(arr){
             let html = "";
             for (let i=0; i<arr.length; i++){
-                html += `
-                    <label class="custom-control-label">
-                    <input type="radio" class="custom-control-input" name="audio" value="${arr[i][0]}" />
-                    ${arr[i][1]}| ${arr[i][2]}M
-                    </label>
-                `
+                if(arr[i]["type"] == "audio"){
+                    html += `
+                        <label class="custom-control-label">
+                        <input type="radio" class="custom-control-input" name="audio" value="${arr[i]['itag']}" />
+                        ${arr[i]['abr']}| ${arr[i]['size']}M
+                        </label>
+                    `
+                }
             }
             audiosEle.innerHTML = html;
         }
@@ -353,17 +357,9 @@
             eleThumbnail.classList.remove("hidden_elements")
         }
 
-        async function retrieve_videos_resolutions(){
-            resolutions = await window.pywebview.api.retrieve_videos_resolutions()
-            return resolutions;
-        }
-
-        async function retrieve_audios_bit_rates(){
-            bit_rates = await window.pywebview.api.retrieve_audio_bit_rates()
-            return bit_rates;
-        }
-        async function download_video_by_url(){
-
+        async function retrieve_streams_info(){
+            info = await window.pywebview.api.retrieve_streams_info()
+            return info;
         }
 
 

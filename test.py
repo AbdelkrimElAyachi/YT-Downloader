@@ -27,13 +27,11 @@ class API:
         print(f"the video thumbnail url retrieved succefully")
         return self.downloader.yt.thumbnail_url;
 
-    def retrieve_videos_resolutions(self):
-        print(f"video resolutsion retrieved succefully")
-        return self.downloader.get_videos_resolutions()
-
-    def retrieve_audio_bit_rates(self):
-        print(f"audio bit rates retrieved succefully")
-        return self.downloader.get_audios_bit_rates()
+    def retrieve_streams_info(self):
+        print(f"streams info retrieved succefully")
+        info = self.downloader.get_streams_info()
+        print(info)
+        return info
 
     def close(self):
         webview.windows[0].destroy()

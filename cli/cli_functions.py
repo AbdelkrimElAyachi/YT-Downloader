@@ -1,6 +1,5 @@
 # function checks if there is more than one argument (if it is true then the user using oe line command)
 def is_one_line_command(argv):
-    print(len(argv))
     return (len(argv)>1)
 
 # function responsible for reading command line argument
