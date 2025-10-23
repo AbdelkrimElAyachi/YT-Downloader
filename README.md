@@ -1,60 +1,27 @@
-# 🎵 YouTube Stream Downloader
+# 🎬 YT Downloader
 
-**A lightweight tool for downloading audio and video streams from YouTube with full control over format and quality.**
+A **YouTube Downloader** built in Python that lets you download videos and audios from YouTube using both:
+- 🖥️ A **Graphical User Interface (GUI)** built with `pywebview`
+- 💻 A **Command Line Interface (CLI)** for terminal-based usage
 
----
-
-## 🎯 Purpose
-
-This tool is designed to offer users **flexible downloading options** for videos they are legally allowed to access.  
-It allows downloading:
-
-- **Audio-only** (e.g., for podcasts or lectures),
-- **Video-only** (e.g., for presentations or visuals),
-- Or **combined audio + video** in custom quality combinations.
+This project provides flexible and fast YouTube downloading with clean file naming, resolution/bitrate options, and progress animations.
 
 ---
 
-## ✅ V1 Features
+## 🧩 Features
 
-### ✔️ COMPLETED
-- Display list of available **streams** categorized by type:
-  - **Audio-only**
-  - **Video-only**
-  - **Progressive** (audio + video combined)
-- Allow downloading by selecting **itag** of preferred stream
-- Basic **CLI interface** with structured output
+✅ **Two modes of operation:**
+- **CLI Mode:** Interactive terminal-based interface for video/audio downloads  
+- **GUI Mode:** Beautiful desktop UI built using HTML + `pywebview`
 
-### 🚧 IN DEVELOPMENT
-- Simple **GUI** using `pywebview` for easier navigation
+✅ **Download Options**
+- Videos only  
+- Audios only  
+- Both video + audio (merged automatically with `ffmpeg`)
 
-### 🔮 PLANNED
-- Support for **high-quality merging**:
-  - Download **audio and video separately**
-  - Combine them using **FFmpeg** for highest quality output
+✅ **Additional Features**
+- Automatic filename sanitization  
+- Resolution and bitrate selection  
+- Temporary file management  
+- Cross-platform (Windows, macOS, Linux)
 
----
-
-## ⚖️ Disclaimer
-
-This tool is intended for **personal and educational use only**.  
-It does **not support or promote** downloading copyrighted content without permission.
-
-The responsibility for how this tool is used lies solely with the user.  
-Use only for:
-- Your own uploaded videos,
-- Public domain content,
-- Creative Commons–licensed videos,
-- Or other content you have the legal right to download.
-
----
-
-> ⚠️ Please respect YouTube's [Terms of Service](https://www.youtube.com/t/terms) and all applicable copyright laws.
-
-## 🔒 Privacy Disclaimer
-
-This tool does **not collect, store, or transmit** any personal user data.  
-It connects **only directly to YouTube's servers** to fetch video and audio streams.  
-No additional analytics, tracking, or third-party data collection is performed.
-
-Your privacy is fully respected when using this application.
