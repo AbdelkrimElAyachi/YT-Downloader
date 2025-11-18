@@ -1,4 +1,8 @@
+"""
+This modules provices utility for styling cli functions like print
+"""
 from typing import Optional
+import os
 
 # ANSI color codes
 BLACK = "\033[30m"
@@ -15,8 +19,8 @@ RESET = "\033[0m"  # Reset to default color
 BOLD = "\033[1m"
 UNDERLINE = "\033[4m"
 
-
-def printS(message:str, color:Optional[str]="WHITE", style:Optional[str]=None, *args, **kwargs):
+# pylint: disable=keyword-arg-before-vararg
+def print_s(message:str, color:Optional[str]="WHITE", style:Optional[str]=None, *args, **kwargs):
     """
     A modified version of print() that works with differents style
 
@@ -52,13 +56,23 @@ def printS(message:str, color:Optional[str]="WHITE", style:Optional[str]=None, *
         if color.upper() in colors_array:
             print(colors_list[color.upper()], end="", sep="")
         else:
-            raise Exception("Unsupported colors : ", color)
-    
+            raise ValueError("Unsupported colors : ", color)
+
     if style:
         if style.upper() in styles_array:
             print(styles_list[style.upper()], end="", sep="")
         else:
-            raise Exception("Unsupported style : ", style)
-    
+            raise ValueError("Unsupported style : ", style)
+
     print(message+colors_list["RESET"], *args, **kwargs)
 
+
+def starter_message(message):
+    "Display the start message of the application in cli modes both interactive and oneline mode"
+    try:
+        console_width = os.get_terminal_size().columns - 1
+    except OSError:
+        console_width = 50
+    half_csl = (console_width-len(message))//2
+    msg = half_csl*"-"+message+half_csl*"-"
+    print_s(message=msg,color="RED")

@@ -1,3 +1,23 @@
+"""
+This modules provides utility class for displaying terminal based loading animations 
+
+Classes:
+    LoadingAnimation : A thread-safe loading animation
+
+Usage:
+    # Basic spinner
+    anim = LoadingAnimation("Processing")
+    anim.start()
+    # ... do work ...
+    anim.stop()
+
+    # Using as a context manager with progress updates
+    with LoadingAnimation("Downloading") as anim:
+        for i in range(101):
+            anim.update_progress(i)
+            time.sleep(0.05)
+"""
+
 import threading
 import time
 import sys
@@ -6,6 +26,12 @@ from typing import Optional
 from queue import Queue
 
 class LoadingAnimation:
+    """
+    A class handle terminal based animaitons 
+    contians two types of animations : loading bar, spinner
+    """
+
+    # pylint: disable=too-many-instance-attributes
     def __init__(self, message: Optional[str] = None):
         self.message = message or ""
         self._stop_event = threading.Event()
@@ -13,12 +39,13 @@ class LoadingAnimation:
         self._current_mode = "spinner"  # or "progress"
         self._current_percent = 0
         self._spinner_steps = ["|", "/", "-", "\\"]
-        
+        self.thread = None
+
         try:
             self.console_width = os.get_terminal_size().columns - 1
-        except:
+        except OSError:
             self.console_width = 50
-            
+
         self.bar_width = self.console_width - len(self.message) - 10  # Account for % display
 
     def _animation_thread(self):
@@ -32,9 +59,9 @@ class LoadingAnimation:
             else:
                 # Progress bar animation
                 filled = int((self.bar_width * self._current_percent) // 100)
-                bar = '[' + "="*filled + ' '*(self.bar_width-filled) + ']'
-                line = f"\r{self.message} {bar} {self._current_percent}%"
-            
+                progress_bar = '[' + "="*filled + ' '*(self.bar_width-filled) + ']'
+                line = f"\r{self.message} {progress_bar} {self._current_percent}%"
+
             sys.stdout.write(line)
             sys.stdout.flush()
             time.sleep(0.1)
@@ -81,7 +108,7 @@ class LoadingAnimation:
         sys.stdout.write("\n")
         sys.stdout.flush()
 
-    def __enter__(self):
+    def __enter__(self) -> "LoadingAnimation":
         """Context manager entry"""
         self.start()
         return self

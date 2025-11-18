@@ -36,10 +36,6 @@ class Downloader:
             return []
         
     def download_stream(self, itag: int, output_path: Optional[str] = None, filename: Optional[str] = None) -> Optional[str]:
-        if itag is None:
-            msg = "No itag provided. Please specify a stream itag to download"
-            logger.error(msg)
-            raise ValueError(msg)
         try:
             stream = self.streams.get_by_itag(itag)
             if not stream:
