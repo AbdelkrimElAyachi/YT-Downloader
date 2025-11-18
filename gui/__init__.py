@@ -1,7 +1,7 @@
-from .gui import open_gui
+from .gui import start_gui
 
 
 APP_NAME = "gui utils package"
 VERSION = "1.0.0"
 
-__all__ = ["open_gui","APP_NAME","VERSION"]
+__all__ = ["start_gui","APP_NAME","VERSION"]
