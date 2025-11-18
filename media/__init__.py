@@ -1,3 +1,4 @@
+"""Media module handle all the processing and code when it comes to audio or video processing"""
 from .merge import merge_video_audio
 
 APP_NAME = "media utils package"
