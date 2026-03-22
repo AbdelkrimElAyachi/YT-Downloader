@@ -1,34 +1,35 @@
-from ffmpeg import output
-from utils import Downloader
-from media_utils import merge_video_audio
+from pathlib import Path
 from os import path
 import webview
 import tempfile
 import re
 
-# CONSTANTS
-PATH = 'gui/index.html'
+from utils import Downloader
+from media import merge_video_audio
+
+# Resolve HTML path relative to this file so it works from any CWD
+HTML_PATH = Path(__file__).parent / 'index.html'
 
 # api class that has python methods that we will use
 class Api:
 
     def set_url(self, url):
-        print(f"the url has been set succefully : {url}")
+        print(f"the url has been set successfully : {url}")
         self.downloader = Downloader(url)
         self.title = self.downloader.yt.title
         self.tmpdir = None
         return True;
 
     def retrieve_video_title(self):
-        print(f"the video title retrieved succefully")
+        print(f"the video title retrieved successfully")
         return self.title;
 
     def retrieve_thumbnail_url(self):
-        print(f"the video thumbnail url retrieved succefully")
+        print(f"the video thumbnail url retrieved successfully")
         return self.downloader.yt.thumbnail_url;
 
     def retrieve_streams_info(self):
-        print(f"streams info retrieved succefully")
+        print(f"streams info retrieved successfully")
         return self.downloader.get_streams_info()
 
     def close(self):
@@ -69,7 +70,7 @@ class Api:
         if self.tmpdir is not None:
             self.tmpdir.cleanup()
             self.tmpdir = None
-            print("temporary files cleaned succefully")
+            print("temporary files cleaned successfully")
 
     def sanitize_filename(self,filename):
         # Remove invalid chars for Windows, Linux, Mac
@@ -90,13 +91,14 @@ class Gui:
         webview.start()
 
 
-def read_file(path):
-    with open(path,'r') as f:
-        html = f.read()
-        return html
+def read_file(filepath):
+    """Read and return the contents of a file."""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        return f.read()
 
 
 def start_gui():
-    html = read_file(PATH)
+    """Launch the pywebview GUI application."""
+    html = read_file(HTML_PATH)
     app = Gui(html, Api)
     app.run()

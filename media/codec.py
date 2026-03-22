@@ -1,25 +1,29 @@
 import ffmpeg
+from typing import Optional
+from logger import logger
 
-def get_codecs(filename):
-    # Probe the file metadata
-    probe = ffmpeg.probe(filename)
-    
-    # Extract video and audio streams
-    video_stream = next((stream for stream in probe['streams'] if stream['codec_type'] == 'video'), None)
-    audio_stream = next((stream for stream in probe['streams'] if stream['codec_type'] == 'audio'), None)
-    
-    # Get codec names
-    vcodec = video_stream['codec_name'] if video_stream else None
-    acodec = audio_stream['codec_name'] if audio_stream else None
-    
+
+def get_codecs(filename: str) -> dict:
+    """
+    Probe a media file and return its video codec, audio codec, and container format.
+
+    Args:
+        filename: Path to the media file to probe.
+
+    Returns:
+        A dict with keys 'vcodec', 'acodec', and 'container'.
+    """
+    try:
+        probe = ffmpeg.probe(filename)
+    except ffmpeg.Error as e:
+        logger.error(f"Failed to probe file '{filename}': {e}")
+        return {"vcodec": None, "acodec": None, "container": None}
+
+    video_stream = next((s for s in probe['streams'] if s['codec_type'] == 'video'), None)
+    audio_stream = next((s for s in probe['streams'] if s['codec_type'] == 'audio'), None)
+
     return {
-        "vcodec": vcodec,  # e.g., "h264", "vp9", "av1"
-        "acodec": acodec,  # e.g., "aac", "opus", "mp3"
-        "container": probe['format']['format_name']  # e.g., "mp4", "webm"
+        "vcodec": video_stream['codec_name'] if video_stream else None,
+        "acodec": audio_stream['codec_name'] if audio_stream else None,
+        "container": probe['format']['format_name'],
     }
-
-# Example usage
-#file_info = get_codecs("your_file.mp4")
-#print("Video Codec:", file_info["vcodec"])
-#print("Audio Codec:", file_info["acodec"])
-#print("Container:", file_info["container"])

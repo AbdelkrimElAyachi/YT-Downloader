@@ -5,9 +5,10 @@ Handles log formatting, file logging, and console output.
 
 import logging
 import os
+from pathlib import Path
 
-LOG_DIR = "logs"
-os.makedirs(LOG_DIR, exist_ok=True)
+LOG_DIR = Path(__file__).parent / "logs"
+LOG_DIR.mkdir(exist_ok=True)
 
 # Configure root logger once
 logger_format = logging.Formatter(
@@ -16,7 +17,7 @@ logger_format = logging.Formatter(
 )
 
 # File handler
-file_handler = logging.FileHandler(f"{LOG_DIR}/application")
+file_handler = logging.FileHandler(LOG_DIR / "application.log")
 file_handler.setFormatter(logger_format)
 file_handler.setLevel(logging.INFO)
 

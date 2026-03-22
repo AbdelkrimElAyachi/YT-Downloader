@@ -1,14 +1,25 @@
+from enum import Enum
+from typing import List, Optional, Any
+
 from pytubefix import YouTube, exceptions as pt_exceptions
 from pytubefix.streams import Stream
-from typing import List, Optional, Any
+
 from logger import logger
 import os
+
+
+class StreamType(Enum):
+    """Enumeration of stream types."""
+    AUDIO = "audio"
+    VIDEO = "video"
+    UNKNOWN = "unknown"
 
 class Downloader:
     def __init__(self, url: str, *args: Any) -> None:
         if not url:
             raise ValueError("No URL provided !!!")
         self.url = url
+        self._streams = None
         try:
             logger.info(f"Creating YouTube object for URL: {url}")
             self.yt = YouTube(url, *args)
@@ -24,7 +35,7 @@ class Downloader:
 
     @property
     def streams(self):
-        if not hasattr(self, "_streams"):
+        if self._streams is None:
             self._streams = self.yt.streams
         return self._streams
     
@@ -77,11 +88,11 @@ class Downloader:
         for stream in all_streams:
 
             if stream.includes_audio_track and not stream.includes_video_track:
-                stream_type = "audio"
+                stream_type = StreamType.AUDIO
             elif stream.includes_video_track and not stream.includes_audio_track:
-                stream_type = "video"
+                stream_type = StreamType.VIDEO
             else:
-                stream_type = "unknown"
+                stream_type = StreamType.UNKNOWN
 
             stream_size_mb = round(stream.filesize / (1024*1024), 2) if stream.filesize else 0
             stream_resolution = getattr(stream, "resolution", None)
@@ -89,7 +100,7 @@ class Downloader:
 
             streams_info.append({
                     "itag": stream.itag,
-                    "type": stream_type,
+                    "type": stream_type.value,
                     "size": stream_size_mb,
                     "resolution": stream_resolution,
                     "abr": stream_abr

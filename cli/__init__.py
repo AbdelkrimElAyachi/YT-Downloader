@@ -10,10 +10,12 @@ VERSION = "1.0.0"
 
 __all__ = [
     "LoadingAnimation",
-    "printS","is_one_line_command",
-    "read_arguments", 
-    "run_cli_interactive_mode", 
+    "print_s",
+    "starter_message",
+    "is_one_line_command",
+    "read_arguments",
+    "run_cli_interactive_mode",
     "run_cli_flags_mode",
     "APP_NAME",
-    "VERSION"
+    "VERSION",
 ]

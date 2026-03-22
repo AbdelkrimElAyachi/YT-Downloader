@@ -10,7 +10,7 @@ RED = "\033[31m"
 GREEN = "\033[32m"
 YELLOW = "\033[33m"
 BLUE = "\033[34m"
-MAGNETA = "\033[35m"
+MAGENTA = "\033[35m"
 CYAN = "\033[36m"
 WHITE = "\033[37m"
 RESET = "\033[0m"  # Reset to default color
@@ -32,7 +32,7 @@ def print_s(message:str, color:Optional[str]="WHITE", style:Optional[str]=None, 
         list of pssible styles : UNDERLINE, BOLD
         by default takes None
     """
-    colors_array = ["BLACK","RED","GREEN","YELLOW","BLUE","MAGNETA","CYAN","WHITE"]
+    colors_array = ["BLACK","RED","GREEN","YELLOW","BLUE","MAGENTA","CYAN","WHITE"]
     styles_array = ["BOLD","UNDERLINE"]
 
     colors_list = {
@@ -41,7 +41,7 @@ def print_s(message:str, color:Optional[str]="WHITE", style:Optional[str]=None, 
         "GREEN" : GREEN,
         "YELLOW" : YELLOW,
         "BLUE" : BLUE,
-        "MAGNETA" : MAGNETA,
+        "MAGENTA" : MAGENTA,
         "CYAN" : CYAN,
         "WHITE" : WHITE,
         "RESET" : RESET
@@ -68,7 +68,7 @@ def print_s(message:str, color:Optional[str]="WHITE", style:Optional[str]=None, 
 
 
 def starter_message(message):
-    "Display the start message of the application in cli modes both interactive and oneline mode"
+    """Display the start message of the application in cli modes both interactive and oneline mode."""
     try:
         console_width = os.get_terminal_size().columns - 1
     except OSError:
