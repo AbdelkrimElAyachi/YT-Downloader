@@ -24,14 +24,10 @@ It allows downloading:
   - **Progressive** (audio + video combined)
 - Allow downloading by selecting **itag** of preferred stream
 - Basic **CLI interface** with structured output
-
-### 🚧 IN DEVELOPMENT
 - Simple **GUI** using `pywebview` for easier navigation
-
-### 🔮 PLANNED
 - Support for **high-quality merging**:
   - Download **audio and video separately**
-  - Combine them using **FFmpeg** for highest quality output
+  - Combine them using **FFmpeg** for highest quality output (all handled by the application)
 
 ---
 
@@ -50,11 +46,3 @@ Use only for:
 ---
 
 > ⚠️ Please respect YouTube's [Terms of Service](https://www.youtube.com/t/terms) and all applicable copyright laws.
-
-## 🔒 Privacy Disclaimer
-
-This tool does **not collect, store, or transmit** any personal user data.  
-It connects **only directly to YouTube's servers** to fetch video and audio streams.  
-No additional analytics, tracking, or third-party data collection is performed.
-
-Your privacy is fully respected when using this application.
